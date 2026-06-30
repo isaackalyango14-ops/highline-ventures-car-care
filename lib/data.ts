@@ -188,14 +188,11 @@ export const stats = [
 export const galleryImages = [
   { src: "/images/facility-panorama.jpg", alt: "Highline Ventures facility panoramic view", category: "Facility" },
   { src: "/images/facility-front.jpg", alt: "Highline Ventures Car Care front entrance", category: "Facility" },
-  { src: "/images/facility-close.jpg", alt: "Highline Ventures facility close-up view", category: "Facility" },
+  { src: "/images/price-board.jpg", alt: "Car wash service menu and pricing", category: "Facility" },
   { src: "/images/workshop-staff.jpg", alt: "Professional workshop staff at work", category: "Workshop" },
   { src: "/images/workshop-interior.jpg", alt: "Workshop interior with hydraulic lift and air compressor", category: "Workshop" },
-  { src: "/images/alignment-bay.jpg", alt: "Wheel alignment bay interior", category: "Workshop" },
+  { src: "/images/alignment-pit.jpg", alt: "Wheel alignment pit with 4-post system", category: "Equipment" },
   { src: "/images/tyre-changer.jpg", alt: "Professional tyre changing machine", category: "Equipment" },
   { src: "/images/wheel-balancer.jpg", alt: "JohnBean 300L wheel balancer", category: "Equipment" },
-  { src: "/images/alignment-machine.jpg", alt: "Computer wheel alignment equipment", category: "Equipment" },
-  { src: "/images/alignment-pit.jpg", alt: "Wheel alignment pit with 4-post system", category: "Equipment" },
-  { src: "/images/hydraulic-lift.jpg", alt: "Hydraulic vehicle lift system", category: "Equipment" },
-  { src: "/images/price-board.jpg", alt: "Car wash service menu and pricing", category: "Facility" },
+  { src: "/images/alignment-machine.jpg", alt: "Hydraulic wheel alignment equipment", category: "Equipment" },
 ];
