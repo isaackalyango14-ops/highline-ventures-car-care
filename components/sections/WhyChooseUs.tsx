@@ -11,14 +11,14 @@ const reasons = [
   { icon: Clock, title: "Fast Service", desc: "Streamlined processes. Minimal wait, maximum quality." },
   { icon: CurrencyDollar, title: "Clear Pricing", desc: "No hidden costs. What you see is exactly what you pay." },
   { icon: ShieldCheck, title: "Quality Check", desc: "Every job is inspected before handover. We own our work." },
-  { icon: Trophy, title: "VIP Treatment", desc: "First call to key handover — every customer is treated like a priority." },
+  { icon: Trophy, title: "VIP Treatment", desc: "First call to key handover. Every customer is treated like a priority." },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-padding bg-[#060606] relative overflow-hidden">
-      <div className="ambient-orb-red opacity-20" style={{ left: "5%", bottom: "10%" }} />
-      <div className="ambient-orb-gold opacity-30" style={{ right: "5%", top: "10%" }} />
+    <section className="section-padding bg-white relative overflow-hidden">
+      <div className="ambient-orb-red opacity-25" style={{ left: "5%", bottom: "10%" }} />
+      <div className="ambient-orb-gold opacity-40" style={{ right: "5%", top: "10%" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111]/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
             </div>
 
@@ -55,13 +55,13 @@ export default function WhyChooseUs() {
               <div className="double-bezel-outer">
                 <div className="double-bezel-inner px-6 py-5 text-center">
                   <div className="font-display font-black text-3xl gold-gradient leading-none">1K+</div>
-                  <div className="text-[9px] text-white/30 uppercase tracking-[0.2em] mt-1.5">Vehicles Served</div>
+                  <div className="text-[9px] text-black/35 uppercase tracking-[0.2em] mt-1.5">Vehicles Served</div>
                 </div>
               </div>
             </motion.div>
 
             {/* Gold accent corner */}
-            <div className="absolute -top-4 -left-4 w-20 h-20 rounded-3xl border border-[#D4AF37]/10 pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-20 h-20 rounded-3xl border border-[#B8860C]/15 pointer-events-none" />
           </motion.div>
 
           {/* Right: Content */}
@@ -83,13 +83,13 @@ export default function WhyChooseUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-                    className="group p-4 rounded-2xl border border-white/[0.05] hover:border-[#C1121F]/20 hover:bg-white/[0.02] transition-all duration-500"
+                    className="group p-4 rounded-2xl border border-black/[0.05] hover:border-[#C1121F]/20 hover:bg-black/[0.015] transition-all duration-500"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-[#C1121F]/10 flex items-center justify-center mb-3 group-hover:bg-[#C1121F]/18 transition-colors">
+                    <div className="w-9 h-9 rounded-xl bg-[#C1121F]/8 flex items-center justify-center mb-3 group-hover:bg-[#C1121F]/14 transition-colors">
                       <Icon size={18} weight="light" className="text-[#C1121F]" />
                     </div>
-                    <h4 className="font-semibold text-white text-[13px] mb-1">{r.title}</h4>
-                    <p className="text-white/35 text-[12px] leading-relaxed">{r.desc}</p>
+                    <h4 className="font-semibold text-[#15140F] text-[13px] mb-1">{r.title}</h4>
+                    <p className="text-black/40 text-[12px] leading-relaxed">{r.desc}</p>
                   </motion.div>
                 );
               })}

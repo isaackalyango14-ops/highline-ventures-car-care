@@ -35,7 +35,7 @@ export default function GalleryGrid() {
             className={`px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
               filter === cat
                 ? "bg-[#C1121F] text-white"
-                : "bg-white/5 text-white/50 hover:text-white hover:bg-white/10"
+                : "bg-black/[0.03] text-black/50 hover:text-[#15140F] hover:bg-black/[0.06]"
             }`}
           >
             {cat}

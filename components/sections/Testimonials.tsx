@@ -1,83 +1,43 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, CaretLeft, CaretRight } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
+import { Star } from "@phosphor-icons/react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
-
   return (
-    <section className="section-padding bg-[#080808] relative overflow-hidden">
-      <div className="ambient-orb-red opacity-25" style={{ left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} />
-
+    <section className="section-padding bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="What Customers" highlight="Say" subtitle="Real feedback from clients across Kampala." centered className="mb-14" />
 
-        <div className="max-w-2xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="double-bezel-outer"
-            >
-              <div className="double-bezel-inner p-8 md:p-10">
-                {/* Stars */}
-                <div className="flex gap-1 mb-6">
-                  {Array.from({ length: testimonials[current].rating }).map((_, i) => (
-                    <Star key={i} size={14} weight="fill" className="text-[#D4AF37]" />
-                  ))}
-                </div>
-
-                <blockquote className="text-white/75 text-lg md:text-xl leading-relaxed font-light mb-8 italic">
-                  &ldquo;{testimonials[current].text}&rdquo;
-                </blockquote>
-
-                <div className="flex items-center gap-4 pt-6 border-t border-white/[0.06]">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C1121F] to-[#8C0D16] flex items-center justify-center text-white font-bold font-display text-sm shadow-lg shadow-[#C1121F]/20">
-                    {testimonials[current].name[0]}
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold text-[13px]">{testimonials[current].name}</div>
-                    <div className="text-white/30 text-[11px] mt-0.5">{testimonials[current].role} &middot; {testimonials[current].location}</div>
-                  </div>
-                </div>
+        <div className="max-w-xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="double-bezel-outer"
+          >
+            <div className="double-bezel-inner p-10 md:p-12 text-center flex flex-col items-center gap-4">
+              <div className="flex gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={18} weight="regular" className="text-black/15" />
+                ))}
               </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Controls */}
-          <div className="flex items-center justify-between mt-6 px-1">
-            <div className="flex gap-1.5">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  aria-label={`Testimonial ${i + 1}`}
-                  className={`h-px rounded-full transition-all duration-400 ${i === current ? "w-8 bg-[#C1121F]" : "w-2 bg-white/15 hover:bg-white/30"}`}
-                />
-              ))}
+              <h3 className="font-display font-bold text-lg text-[#15140F]">No reviews yet</h3>
+              <p className="text-black/40 text-[13px] leading-relaxed max-w-sm">
+                We&apos;re just getting started — be among the first to share your experience with Highline Ventures Car Care.
+              </p>
+              <a
+                href="https://wa.me/256792914253?text=Hi%2C%20I%27d%20like%20to%20leave%20a%20review%20for%20Highline%20Ventures."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 px-5 py-2.5 bg-[#C1121F] hover:bg-[#A50F1A] text-white text-[12px] font-semibold rounded-xl transition-colors"
+              >
+                Leave a Review
+              </a>
             </div>
-            <div className="flex gap-2">
-              {[prev, next].map((fn, i) => (
-                <button
-                  key={i}
-                  onClick={fn}
-                  aria-label={i === 0 ? "Previous" : "Next"}
-                  className="w-9 h-9 rounded-full border border-white/[0.08] hover:border-[#C1121F]/40 hover:bg-[#C1121F]/10 flex items-center justify-center text-white/40 hover:text-white transition-all duration-300"
-                >
-                  {i === 0 ? <CaretLeft size={14} weight="bold" /> : <CaretRight size={14} weight="bold" />}
-                </button>
-              ))}
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

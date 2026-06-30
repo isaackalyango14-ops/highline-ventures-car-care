@@ -50,15 +50,15 @@ const cards = [
 
 export default function ServicesPreview() {
   return (
-    <section className="section-padding bg-[#080808] relative overflow-hidden">
+    <section className="section-padding bg-[#FAFAF8] relative overflow-hidden">
       <div className="ambient-orb-red opacity-30" style={{ right: "-5%", top: "30%" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <SectionHeading title="What We" highlight="Offer" subtitle="Nine services. One standard — exceptional." />
-          <Link href="/services" className="group flex items-center gap-2 text-[13px] text-[#D4AF37] hover:text-white transition-colors font-semibold flex-shrink-0">
+          <SectionHeading title="What We" highlight="Offer" subtitle="Nine services. One standard. Exceptional." />
+          <Link href="/services" className="group flex items-center gap-2 text-[13px] text-[#B8860C] hover:text-[#15140F] transition-colors font-semibold flex-shrink-0">
             View All Services
-            <span className="w-6 h-6 rounded-full border border-[#D4AF37]/30 group-hover:border-white/30 flex items-center justify-center transition-colors">
+            <span className="w-6 h-6 rounded-full border border-[#B8860C]/30 group-hover:border-black/30 flex items-center justify-center transition-colors">
               <ArrowRight size={11} weight="bold" />
             </span>
           </Link>
@@ -77,7 +77,7 @@ export default function ServicesPreview() {
                 transition={{ duration: 0.6, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
                 className={`double-bezel-outer group cursor-pointer ${card.size}`}
               >
-                <div className="double-bezel-inner p-6 h-full flex flex-col gap-4 hover:bg-[#161616] transition-colors duration-500 min-h-[180px]">
+                <div className="double-bezel-inner p-6 h-full flex flex-col gap-4 hover:bg-[#F7F6F2] transition-colors duration-500 min-h-[180px]">
                   {/* Top row */}
                   <div className="flex items-start justify-between">
                     <div
@@ -96,8 +96,8 @@ export default function ServicesPreview() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="font-display font-bold text-[17px] text-white mb-1.5">{card.title}</h3>
-                    <p className="text-white/40 text-[13px] leading-relaxed">{card.desc}</p>
+                    <h3 className="font-display font-bold text-[17px] text-[#15140F] mb-1.5">{card.title}</h3>
+                    <p className="text-black/40 text-[13px] leading-relaxed">{card.desc}</p>
                   </div>
 
                   {/* CTA */}

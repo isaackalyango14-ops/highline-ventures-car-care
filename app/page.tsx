@@ -26,7 +26,7 @@ export default function HomePage() {
       <Testimonials />
 
       {/* FAQ Section */}
-      <section className="section-padding bg-[#141414]">
+      <section className="section-padding bg-[#FAFAF8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Common"

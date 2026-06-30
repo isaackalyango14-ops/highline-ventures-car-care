@@ -24,23 +24,23 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-28 pb-20 bg-[#0F0F0F] overflow-hidden">
+      <section className="relative pt-28 pb-20 bg-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/workshop-interior.jpg"
             alt="Highline Ventures workshop"
             fill
-            className="object-cover opacity-15"
+            className="object-cover opacity-[0.08]"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F0F0F]/80 to-[#0F0F0F]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/85 to-white" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display font-black text-4xl md:text-6xl text-white mb-5"
+            className="font-display font-black text-4xl md:text-6xl text-[#15140F] mb-5"
           >
             Our <span className="gold-gradient">Services</span>
           </motion.h1>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white/50 text-lg max-w-xl mx-auto"
+            className="text-black/45 text-lg max-w-xl mx-auto"
           >
             Professional automotive care delivered with precision, using industry-grade equipment.
           </motion.p>
@@ -56,7 +56,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services */}
-      <section className="section-padding bg-[#0F0F0F]">
+      <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading title="What We" highlight="Do" className="mb-10" />
 
@@ -69,7 +69,7 @@ export default function ServicesPage() {
                 className={`px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   active === cat.key
                     ? "bg-[#C1121F] text-white"
-                    : "bg-white/5 text-white/50 hover:text-white hover:bg-white/10"
+                    : "bg-black/[0.03] text-black/50 hover:text-[#15140F] hover:bg-black/[0.06]"
                 }`}
               >
                 {cat.label}
@@ -86,7 +86,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Equipment showcase */}
-      <section className="section-padding bg-[#141414]">
+      <section className="section-padding bg-[#FAFAF8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Professional"

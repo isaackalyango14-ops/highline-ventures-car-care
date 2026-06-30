@@ -16,7 +16,7 @@ const previewImages = [
 
 export default function GalleryPreview() {
   return (
-    <section className="section-padding bg-[#141414]">
+    <section className="section-padding bg-[#FAFAF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <SectionHeading
@@ -26,7 +26,7 @@ export default function GalleryPreview() {
           />
           <Link
             href="/gallery"
-            className="flex items-center gap-2 text-sm text-[#D4AF37] hover:text-white transition-colors font-medium flex-shrink-0"
+            className="flex items-center gap-2 text-sm text-[#B8860C] hover:text-[#15140F] transition-colors font-medium flex-shrink-0"
           >
             Full Gallery
             <ArrowRight size={16} weight="bold" />

@@ -1,4 +1,6 @@
 export const businessLocation = {
+  address: "14 Nabunya Road",
+  city: "Kampala, Uganda",
   lat: 0.3027984,
   lng: 32.5584674,
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=0.3027984,32.5584674",
@@ -189,7 +191,7 @@ export const stats = [
   { value: 1000, suffix: "+", label: "Vehicles Serviced" },
   { value: 9, suffix: "", label: "Service Types" },
   { value: 100, suffix: "%", label: "Customer Satisfaction" },
-  { value: 3, suffix: "+", label: "Years of Excellence" },
+  { value: 1, suffix: "Year", label: "In Business" },
 ];
 
 export const galleryImages = [

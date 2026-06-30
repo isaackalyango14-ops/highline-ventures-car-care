@@ -11,6 +11,7 @@ function StatItem({ value, suffix, label, delay }: { value: number; suffix: stri
   const [started, setStarted] = useState(false);
   if (inView && !started) setStarted(true);
   const count = useCounter(value, 2200, started);
+  const wordSuffix = suffix.length > 1;
 
   return (
     <motion.div
@@ -24,9 +25,9 @@ function StatItem({ value, suffix, label, delay }: { value: number; suffix: stri
       <div className="double-bezel-inner px-6 py-8 text-center">
         <div className="font-display font-black text-4xl md:text-5xl tracking-tight leading-none mb-2">
           <span className="gold-gradient">{count}</span>
-          <span className="text-[#C1121F]">{suffix}</span>
+          <span className="text-[#C1121F]">{wordSuffix ? ` ${suffix}` : suffix}</span>
         </div>
-        <div className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-medium">{label}</div>
+        <div className="text-[10px] text-black/35 uppercase tracking-[0.2em] font-medium">{label}</div>
       </div>
     </motion.div>
   );
@@ -34,10 +35,9 @@ function StatItem({ value, suffix, label, delay }: { value: number; suffix: stri
 
 export default function Stats() {
   return (
-    <section className="relative py-16 bg-[#080808] overflow-hidden">
-      {/* Ambient glow */}
-      <div className="ambient-orb-red opacity-40" style={{ left: "20%", top: "50%", transform: "translate(-50%,-50%)" }} />
-      <div className="ambient-orb-gold opacity-60" style={{ right: "15%", top: "50%", transform: "translate(50%,-50%)" }} />
+    <section className="relative py-16 bg-white overflow-hidden">
+      <div className="ambient-orb-red opacity-50" style={{ left: "20%", top: "50%", transform: "translate(-50%,-50%)" }} />
+      <div className="ambient-orb-gold opacity-70" style={{ right: "15%", top: "50%", transform: "translate(50%,-50%)" }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row gap-3">

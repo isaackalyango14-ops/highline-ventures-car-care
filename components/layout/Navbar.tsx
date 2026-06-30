@@ -41,18 +41,18 @@ export default function Navbar() {
           className={cn(
             "flex items-center justify-between gap-4 px-4 py-2.5 rounded-full transition-all duration-500 w-full max-w-4xl",
             scrolled
-              ? "bg-[#080808]/90 backdrop-blur-2xl border border-white/[0.07] shadow-2xl shadow-black/40"
-              : "bg-[#080808]/50 backdrop-blur-xl border border-white/[0.05]"
+              ? "bg-white/90 backdrop-blur-2xl border border-black/[0.06] shadow-xl shadow-black/[0.06]"
+              : "bg-white/60 backdrop-blur-xl border border-black/[0.05]"
           )}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0" aria-label="Highline Ventures">
-            <div className="relative w-9 h-9 rounded-xl bg-white/95 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300 p-1.5">
+            <div className="relative w-9 h-9 rounded-xl bg-black/[0.03] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300 p-1.5">
               <Logo size={26} />
             </div>
             <div className="hidden sm:block leading-none">
-              <div className="text-white font-display font-bold text-[12px] tracking-[0.06em] uppercase">Highline Ventures</div>
-              <div className="text-[#D4AF37] font-sans text-[8px] tracking-[0.25em] uppercase mt-0.5 opacity-80">Car Care</div>
+              <div className="text-[#15140F] font-display font-bold text-[12px] tracking-[0.06em] uppercase">Highline Ventures</div>
+              <div className="text-[#B8860C] font-sans text-[8px] tracking-[0.25em] uppercase mt-0.5 opacity-90">Car Care</div>
             </div>
           </Link>
 
@@ -65,15 +65,15 @@ export default function Navbar() {
                   className={cn(
                     "relative px-3.5 py-1.5 text-[12.5px] font-medium tracking-wide rounded-full transition-all duration-300",
                     pathname === link.href
-                      ? "text-white bg-white/8"
-                      : "text-white/45 hover:text-white/80 hover:bg-white/5"
+                      ? "text-[#15140F] bg-black/[0.05]"
+                      : "text-black/45 hover:text-black/80 hover:bg-black/[0.03]"
                   )}
                 >
                   {link.label}
                   {pathname === link.href && (
                     <motion.div
                       layoutId="active-pill"
-                      className="absolute inset-0 rounded-full bg-white/6 border border-white/8"
+                      className="absolute inset-0 rounded-full bg-black/[0.04] border border-black/[0.06]"
                       transition={{ type: "spring", stiffness: 350, damping: 35 }}
                     />
                   )}
@@ -84,13 +84,13 @@ export default function Navbar() {
 
           {/* Right CTA */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            <a href="tel:+256745782799" className="flex items-center gap-1.5 text-[12px] text-white/35 hover:text-white/70 transition-colors">
+            <a href="tel:+256745782799" className="flex items-center gap-1.5 text-[12px] text-black/35 hover:text-black/70 transition-colors">
               <Phone size={12} weight="fill" />
               0745 782799
             </a>
             <Link
               href="/contact"
-              className="group flex items-center gap-2 pl-4 pr-2 py-2 bg-[#C1121F] hover:bg-[#A50F1A] text-white text-[12.5px] font-bold rounded-full transition-all duration-300 active:scale-[0.97] shadow-lg shadow-[#C1121F]/25"
+              className="group flex items-center gap-2 pl-4 pr-2 py-2 bg-[#C1121F] hover:bg-[#A50F1A] text-white text-[12.5px] font-bold rounded-full transition-all duration-300 active:scale-[0.97] shadow-lg shadow-[#C1121F]/20"
             >
               Book Service
               <span className="w-6 h-6 rounded-full bg-black/20 flex items-center justify-center group-hover:translate-x-0.5 transition-transform duration-300">
@@ -111,17 +111,17 @@ export default function Navbar() {
             <motion.span
               animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
-              className="block w-5 h-px bg-white origin-center"
+              className="block w-5 h-px bg-[#15140F] origin-center"
             />
             <motion.span
               animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.2 }}
-              className="block w-5 h-px bg-white"
+              className="block w-5 h-px bg-[#15140F]"
             />
             <motion.span
               animate={mobileOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
-              className="block w-5 h-px bg-white origin-center"
+              className="block w-5 h-px bg-[#15140F] origin-center"
             />
           </button>
         </motion.nav>
@@ -135,7 +135,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#080808]/95 backdrop-blur-3xl flex flex-col"
+            className="fixed inset-0 z-40 bg-white/97 backdrop-blur-3xl flex flex-col"
           >
             <div className="flex flex-col flex-1 justify-center px-8">
               <ul className="flex flex-col gap-1">
@@ -150,12 +150,12 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "flex items-center justify-between py-4 text-4xl font-display font-black border-b border-white/[0.06] transition-colors",
-                        pathname === link.href ? "text-[#D4AF37]" : "text-white/70 hover:text-white"
+                        "flex items-center justify-between py-4 text-4xl font-display font-black border-b border-black/[0.06] transition-colors",
+                        pathname === link.href ? "text-[#B8860C]" : "text-black/70 hover:text-black"
                       )}
                     >
                       {link.label}
-                      {pathname === link.href && <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />}
+                      {pathname === link.href && <div className="w-1.5 h-1.5 rounded-full bg-[#B8860C]" />}
                     </Link>
                   </motion.li>
                 ))}
@@ -167,10 +167,10 @@ export default function Navbar() {
                 transition={{ delay: 0.4 }}
                 className="flex flex-col gap-3 mt-10"
               >
-                <a href="tel:+256745782799" className="flex items-center justify-center gap-2 py-4 border border-white/10 text-white font-semibold text-base rounded-2xl">
+                <a href="tel:+256745782799" className="flex items-center justify-center gap-2 py-4 border border-black/10 text-[#15140F] font-semibold text-base rounded-2xl">
                   <Phone size={16} weight="fill" /> Call 0745 782799
                 </a>
-                <Link href="/contact" className="flex items-center justify-center py-4 bg-[#C1121F] text-white font-bold text-base rounded-2xl shadow-xl shadow-[#C1121F]/20">
+                <Link href="/contact" className="flex items-center justify-center py-4 bg-[#C1121F] text-white font-bold text-base rounded-2xl shadow-xl shadow-[#C1121F]/15">
                   Book a Service
                 </Link>
               </motion.div>
