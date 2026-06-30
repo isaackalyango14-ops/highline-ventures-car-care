@@ -24,18 +24,18 @@ export default function Logo({ className, size = 36, color = "#C1121F" }: LogoPr
         strokeWidth="5"
         fill="none"
       />
-      {/* H - thin, left side, full height */}
+      {/* lowercase h - tall ascender, arch, short leg */}
       <path
-        d="M30 22 V78 M30 50 H50 M50 22 V50"
+        d="M28 16 V80 M28 44 Q28 36 38 36 Q46 36 46 44 V80"
         stroke={color}
         strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
       />
-      {/* V - bold, overlapping from H crossbar to top-right corner */}
+      {/* V - bold, overlapping from h's leg to top-right corner */}
       <path
-        d="M50 50 L62 82 L80 20"
+        d="M46 44 L58 82 L82 18"
         stroke={color}
         strokeWidth="9"
         strokeLinecap="round"
