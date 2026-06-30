@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { Phone, ArrowRight, CheckCircle, CaretDown } from "@phosphor-icons/react";
+import { businessLocation } from "@/lib/data";
 
 const badges = [
   "Professional Equipment",
@@ -127,7 +128,9 @@ export default function Hero() {
               Open Daily
             </div>
             <div className="hidden sm:block h-3 w-px bg-white/10" />
-            <span className="text-xs text-white/35">Kampala, Uganda</span>
+            <a href={businessLocation.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-white/35 hover:text-[#D4AF37] transition-colors">
+              Get Directions
+            </a>
             <div className="hidden sm:block h-3 w-px bg-white/10" />
             <span className="text-xs text-white/35">MoMo: 11204744</span>
           </motion.div>

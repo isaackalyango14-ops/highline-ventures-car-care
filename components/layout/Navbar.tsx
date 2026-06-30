@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/ui/Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -46,8 +47,8 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0" aria-label="Highline Ventures">
-            <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-[#E01525] to-[#8C0D16] flex items-center justify-center text-white font-black text-[11px] font-display flex-shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#C1121F]/30">
-              HV
+            <div className="relative w-9 h-9 rounded-xl bg-white/95 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300 p-1.5">
+              <Logo size={26} />
             </div>
             <div className="hidden sm:block leading-none">
               <div className="text-white font-display font-bold text-[12px] tracking-[0.06em] uppercase">Highline Ventures</div>

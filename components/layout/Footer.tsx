@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Phone, MapPin, WhatsappLogo, FacebookLogo, InstagramLogo, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import Logo from "@/components/ui/Logo";
+import { businessLocation } from "@/lib/data";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -50,7 +52,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#E01525] to-[#8C0D16] flex items-center justify-center text-white font-black text-[11px] font-display shadow-lg shadow-[#C1121F]/20">HV</div>
+              <div className="w-10 h-10 rounded-xl bg-white/95 flex items-center justify-center p-1.5">
+                <Logo size={28} />
+              </div>
               <div>
                 <div className="text-white font-display font-bold text-[12px] tracking-[0.06em] uppercase">Highline Ventures</div>
                 <div className="text-[#D4AF37] text-[8px] tracking-[0.25em] uppercase opacity-80">Car Care</div>
@@ -125,12 +129,14 @@ export default function Footer() {
                   </div>
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={14} weight="fill" className="text-[#D4AF37] mt-0.5 flex-shrink-0" />
-                <div>
-                  <div className="text-[9px] text-white/20 uppercase tracking-widest">Location</div>
-                  <div className="text-white/50 text-[12px]">Kampala, Uganda</div>
-                </div>
+              <li>
+                <a href={businessLocation.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+                  <MapPin size={14} weight="fill" className="text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="text-[9px] text-white/20 uppercase tracking-widest">Location</div>
+                    <div className="text-white/50 group-hover:text-white text-[12px] transition-colors">Get Directions</div>
+                  </div>
+                </a>
               </li>
               <li>
                 <div className="p-3.5 rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/3">

@@ -1,3 +1,10 @@
+export const businessLocation = {
+  lat: 0.3027984,
+  lng: 32.5584674,
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=0.3027984,32.5584674",
+  embedUrl: "https://www.google.com/maps?q=0.3027984,32.5584674&z=16&output=embed",
+};
+
 export const services = [
   {
     id: "car-wash",

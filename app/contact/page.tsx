@@ -3,6 +3,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { Phone, WhatsappLogo, MapPin, Clock, CurrencyDollar } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import FAQ from "@/components/FAQ";
+import { businessLocation } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact & Book",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "0745 782799", href: "tel:+256745782799", color: "text-[#C1121F]" },
   { icon: WhatsappLogo, label: "WhatsApp", value: "0792 914253", href: "https://wa.me/256792914253", color: "text-[#25D366]" },
-  { icon: MapPin, label: "Location", value: "Kampala, Uganda", href: null, color: "text-[#D4AF37]" },
+  { icon: MapPin, label: "Location", value: "Get Directions", href: businessLocation.googleMapsUrl, color: "text-[#D4AF37]" },
   { icon: Clock, label: "Hours", value: "Open Daily", href: null, color: "text-[#C1121F]" },
   { icon: CurrencyDollar, label: "Payment", value: "Cash / MTN MoMo", href: null, color: "text-[#D4AF37]" },
 ];
@@ -88,17 +89,24 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div className="rounded-xl overflow-hidden border border-white/5 h-56">
+              <a
+                href={businessLocation.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl overflow-hidden border border-white/5 hover:border-[#D4AF37]/30 h-56 relative transition-colors group"
+              >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d127672.57997967!2d32.5821!3d0.3476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjAnNTEuNiJOIDMywrAzNCc1NS42IkU!5e0!3m2!1sen!2sug!4v1620000000000!5m2!1sen!2sug"
-                  className="w-full h-full opacity-70"
+                  src={businessLocation.embedUrl}
+                  className="w-full h-full opacity-70 group-hover:opacity-90 transition-opacity pointer-events-none"
                   style={{ border: 0 }}
-                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Highline Ventures location map"
                 />
-              </div>
+                <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-[#0F0F0F]/90 backdrop-blur-sm rounded-lg text-[11px] text-white/70 font-medium">
+                  Open in Google Maps
+                </div>
+              </a>
             </div>
 
             {/* Form */}

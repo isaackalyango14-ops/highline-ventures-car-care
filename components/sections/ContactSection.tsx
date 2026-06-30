@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Phone, WhatsappLogo, MapPin, Clock, CurrencyDollar } from "@phosphor-icons/react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactForm from "@/components/ContactForm";
+import { businessLocation } from "@/lib/data";
 
 const contactInfo = [
   {
@@ -23,8 +24,8 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Kampala, Uganda",
-    href: "https://maps.google.com",
+    value: "Get Directions",
+    href: businessLocation.googleMapsUrl,
     color: "text-[#D4AF37]",
   },
   {
@@ -94,19 +95,26 @@ export default function ContactSection() {
               <div className="text-xs text-white/30 mt-1">Dial *165*3# on MTN</div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="rounded-xl overflow-hidden border border-white/5 h-48 bg-[#141414] relative flex items-center justify-center">
+            {/* Map */}
+            <a
+              href={businessLocation.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl overflow-hidden border border-white/5 hover:border-[#D4AF37]/30 h-48 bg-[#141414] relative transition-colors group"
+            >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d127672.57997967!2d32.5821!3d0.3476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjAnNTEuNiJOIDMywrAzNCc1NS42IkU!5e0!3m2!1sen!2sug!4v1620000000000!5m2!1sen!2sug"
-                className="w-full h-full opacity-60"
+                src={businessLocation.embedUrl}
+                className="w-full h-full opacity-70 group-hover:opacity-90 transition-opacity pointer-events-none"
                 style={{ border: 0 }}
-                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Highline Ventures location"
               />
               <div className="absolute inset-0 pointer-events-none border border-white/5 rounded-xl" />
-            </div>
+              <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-[#0F0F0F]/90 backdrop-blur-sm rounded-lg text-[11px] text-white/70 font-medium">
+                Open in Google Maps
+              </div>
+            </a>
           </motion.div>
 
           {/* Form */}
